@@ -1,9 +1,9 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.cross_validation import train_test_split
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 from sklearn.pipeline import Pipeline
-from sklearn.grid_search import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 if __name__ == '__main__':
 	df = pd.read_csv('./add.csv', header=None)
 	explanatory_variable_columns = set(df.columns.values)
@@ -14,6 +14,8 @@ if __name__ == '__main__':
 	X = df[list(explanatory_variable_columns)]
 	X.replace(to_replace=' *\?', value=-1, regex=True, inplace=True)
 	X_train, X_test, y_train, y_test = train_test_split(X, y)
+	X_train=X_train.fillna(X_train.mean())
+	X_test=X_test.fillna(X_test.mean())
 	pipeline = Pipeline([('clf', RandomForestClassifier(criterion='entropy'))])
 	parameters = {'clf__n_estimators': (5, 10, 20, 50),'clf__max_depth': (50, 150, 250),'clf__min_samples_split': (1, 2, 3),'clf__min_samples_leaf': (1, 2, 3)}
 	grid_search = GridSearchCV(pipeline, parameters, n_jobs=-1,verbose=1, scoring='f1')

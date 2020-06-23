@@ -1,10 +1,10 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model.logistic import LogisticRegression
-from sklearn.cross_validation import train_test_split
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report, accuracy_score, confusion_matrix
 from sklearn.pipeline import Pipeline
-from sklearn.grid_search import GridSearchCV
+from sklearn.model_selection import GridSearchCV
 def main():
 	pipeline = Pipeline([
 		('vect', TfidfVectorizer(stop_words='english')),
@@ -17,10 +17,11 @@ def main():
 		'clf__C': (0.1, 1, 10),
 	}
 	df = pd.read_csv('./train.tsv', header=0, delimiter='\t')
-	X, y = df['Phrase'], df['Sentiment'].as_matrix()
+	df=df.loc[:,['Phrase','Sentiment']]
+	X=df["Phrase"].values
+	y=df["Sentiment"].values
 	X_train, X_test, y_train, y_test = train_test_split(X, y, train_size=0.5)
-	grid_search = GridSearchCV(pipeline, parameters, n_jobs=3,
-verbose=1, scoring='accuracy')
+	grid_search = GridSearchCV(pipeline, parameters, n_jobs=3,verbose=1, scoring='accuracy')
 	grid_search.fit(X_train, y_train)
 	print ('Best score: %0.3f' % grid_search.best_score_)
 	print ('Best parameters set:')

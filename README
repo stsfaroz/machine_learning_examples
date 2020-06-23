@@ -1,159 +1,27 @@
-import nltk
-
-nltk.download('averaged_perceptron_tagger')
-nltk.download('punkt')
-nltk.download('wordnet')
 
 
-sudo pip3 install scikit-image nltk sklearn mahotas
+python  24_logistic_regression.py  == updated
 
+python  27_precision_recall_f1score.py == updated
 
+python  28_ROC_curve.py == updated
 
+python  29_grids.py == updated
 
+31 long time == updated
+33 long time == updated
+34 long time == updated
 
-python  24_logistic_regression.py 
-Traceback (most recent call last):
-  File "24_logistic_regression.py", line 15, in <module>
-    print ((prediction, X_test_raw[i]))
-  File "/usr/local/lib/python3.6/dist-packages/pandas/core/series.py", line 767, in __getitem__
-    result = self.index.get_value(self, key)
-  File "/usr/local/lib/python3.6/dist-packages/pandas/core/indexes/base.py", line 3104, in get_value
-    tz=getattr(series.dtype, 'tz', None))
-  File "pandas/_libs/index.pyx", line 106, in pandas._libs.index.IndexEngine.get_value
-  File "pandas/_libs/index.pyx", line 114, in pandas._libs.index.IndexEngine.get_value
-  File "pandas/_libs/index.pyx", line 162, in pandas._libs.index.IndexEngine.get_loc
-  File "pandas/_libs/hashtable_class_helper.pxi", line 958, in pandas._libs.hashtable.Int64HashTable.get_item
-  File "pandas/_libs/hashtable_class_helper.pxi", line 964, in pandas._libs.hashtable.Int64HashTable.get_item
-KeyError: 0
+python 35_clustering.py  == updated
+
+python 36_kmeans_metrics.py  == updated
 
 
 
-python  27_precision_recall_f1score.py 
-/usr/local/lib/python3.6/dist-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-  "This module will be removed in 0.20.", DeprecationWarning)
-Traceback (most recent call last):
-  File "27_precision_recall_f1score.py", line 6, in <module>
-    df = pd.read_csv('./spam.csv')
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 678, in parser_f
-    return _read(filepath_or_buffer, kwds)
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 446, in _read
-    data = parser.read(nrows)
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 1036, in read
-    ret = self._engine.read(nrows)
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 1848, in read
-    data = self._reader.read(nrows)
-  File "pandas/_libs/parsers.pyx", line 876, in pandas._libs.parsers.TextReader.read
-  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._read_low_memory
-  File "pandas/_libs/parsers.pyx", line 945, in pandas._libs.parsers.TextReader._read_rows
-  File "pandas/_libs/parsers.pyx", line 932, in pandas._libs.parsers.TextReader._tokenize_rows
-  File "pandas/_libs/parsers.pyx", line 2112, in pandas._libs.parsers.raise_parser_error
-pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 9, saw 2
+Python 37_Image_quantization == Need data 'img/tree.jpg'
 
+python 38_semi_supervised_learning.py  == Need data -cats-and-dogs-img/*.jpg
 
-
-
- python  28_ROC_curve.py 
-/usr/local/lib/python3.6/dist-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-  "This module will be removed in 0.20.", DeprecationWarning)
-Traceback (most recent call last):
-  File "28_ROC_curve.py", line 8, in <module>
-    df = pd.read_csv('./spam.csv')
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 678, in parser_f
-    return _read(filepath_or_buffer, kwds)
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 446, in _read
-    data = parser.read(nrows)
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 1036, in read
-    ret = self._engine.read(nrows)
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 1848, in read
-    data = self._reader.read(nrows)
-  File "pandas/_libs/parsers.pyx", line 876, in pandas._libs.parsers.TextReader.read
-  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._read_low_memory
-  File "pandas/_libs/parsers.pyx", line 945, in pandas._libs.parsers.TextReader._read_rows
-  File "pandas/_libs/parsers.pyx", line 932, in pandas._libs.parsers.TextReader._tokenize_rows
-  File "pandas/_libs/parsers.pyx", line 2112, in pandas._libs.parsers.raise_parser_error
-pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 9, saw 2
-
-
-
-
-python  29_grids.py 
-/usr/local/lib/python3.6/dist-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-  "This module will be removed in 0.20.", DeprecationWarning)
-/usr/local/lib/python3.6/dist-packages/sklearn/grid_search.py:42: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. This module will be removed in 0.20.
-  DeprecationWarning)
-Traceback (most recent call last):
-  File "29_grids.py", line 26, in <module>
-    df = pd.read_csv('./spam.csv')
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 678, in parser_f
-    return _read(filepath_or_buffer, kwds)
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 446, in _read
-    data = parser.read(nrows)
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 1036, in read
-    ret = self._engine.read(nrows)
-  File "/usr/local/lib/python3.6/dist-packages/pandas/io/parsers.py", line 1848, in read
-    data = self._reader.read(nrows)
-  File "pandas/_libs/parsers.pyx", line 876, in pandas._libs.parsers.TextReader.read
-  File "pandas/_libs/parsers.pyx", line 891, in pandas._libs.parsers.TextReader._read_low_memory
-  File "pandas/_libs/parsers.pyx", line 945, in pandas._libs.parsers.TextReader._read_rows
-  File "pandas/_libs/parsers.pyx", line 932, in pandas._libs.parsers.TextReader._tokenize_rows
-  File "pandas/_libs/parsers.pyx", line 2112, in pandas._libs.parsers.raise_parser_error
-pandas.errors.ParserError: Error tokenizing data. C error: Expected 1 fields in line 9, saw 2
-
-
-31 long time
-33 long time
-34 long time
-
-
- python 35_clustering.py 
-Traceback (most recent call last):
-  File "35_clustering.py", line 8, in <module>
-    X = np.vstack((x, y)).T
-NameError: name 'x' is not defined
-
-
-python 36_kmeans_metrics.py 
-Traceback (most recent call last):
-  File "36_kmeans_metrics.py", line 8, in <module>
-    X = np.array(zip(x1, x2)).reshape(len(x1), 2)
-ValueError: cannot reshape array of size 1 into shape (14,2)
-
-
- python 38_semi_supervised_learning.py 
-Traceback (most recent call last):
-  File "38_semi_supervised_learning.py", line 21, in <module>
-    X_train_surf_features = np.concatenate(surf_features[:train_len])
-ValueError: need at least one array to concatenate
-
-
-python 42_face_recognition.py 
-/usr/local/lib/python3.6/dist-packages/sklearn/cross_validation.py:41: DeprecationWarning: This module was deprecated in version 0.18 in favor of the model_selection module into which all the refactored classes and functions are moved. Also note that the interface of the new CV iterators are different from that of this module. This module will be removed in 0.20.
-  "This module will be removed in 0.20.", DeprecationWarning)
-Traceback (most recent call last):
-  File "42_face_recognition.py", line 21, in <module>
-    X_train_reduced = pca.fit_transform(X_train)
-  File "/usr/local/lib/python3.6/dist-packages/sklearn/decomposition/pca.py", line 348, in fit_transform
-    U, S, V = self._fit(X)
-  File "/usr/local/lib/python3.6/dist-packages/sklearn/decomposition/pca.py", line 370, in _fit
-    copy=self.copy)
-  File "/usr/local/lib/python3.6/dist-packages/sklearn/utils/validation.py", line 441, in check_array
-    "if it contains a single sample.".format(array))
-ValueError: Expected 2D array, got 1D array instead:
-array=[].
-Reshape your data either using array.reshape(-1, 1) if your data has a single feature or array.reshape(1, -1) if it contains a single sample.
-
- python 43_perceptron.py 
-Traceback (most recent call last):
-  File "43_perceptron.py", line 2, in <module>
-    from sklearn.metrics.metrics import f1_score, classification_
-ModuleNotFoundError: No module named 'sklearn.metrics.metrics'
-
-
-
-37,38
-42
-
-
-
+python 42_face_recognition.py  == Need data -data/att-faces/orl_faces
 
 
